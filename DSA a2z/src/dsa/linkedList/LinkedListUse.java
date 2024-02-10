@@ -2,7 +2,7 @@ package dsa.linkedList;
 
 import java.util.Scanner;
 
-public class LinkedListUse<T> {
+public class LinkedListUse {
 
     static Node<Integer> createLinkedList() {
 
@@ -55,7 +55,7 @@ public class LinkedListUse<T> {
         return temp.data;
     }
 
-    static Node<Integer> takeInput() {
+    public static Node<Integer> takeInput() {
 
         Scanner s = new Scanner(System.in);
         int data = s.nextInt();
