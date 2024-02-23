@@ -35,6 +35,19 @@ public class ArraysProb {
         return ans;
     }
 
+    static void pushZeroesToEnd(int[] arr) {
+        int n = arr.length;
+        int nonZero = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                int temp = arr[i];
+                arr[i] = arr[nonZero];
+                arr[nonZero] = temp;
+                nonZero++;
+            }
+        }
+    }
+
     static int[] rearrangeBySign1(int[] arr) {
         int n = arr.length;
         ArrayList<Integer> pos = new ArrayList<>();
@@ -99,7 +112,13 @@ public class ArraysProb {
     public static void main(String[] args) {
         int arr[] = { 7, 1, 5, 3, 6, 4 };
         int re[] = { 1, 2, -4, -5 };
+        int[] arr5 = { 1, 0, 2, 3, 2, 0, 0, 4, 5, 1 };
+        pushZeroesToEnd(arr5);
+        System.out.println("moved zeroes to end");
         int maxPro = maxProfit(arr);
+        for (int val : arr5) {
+            System.out.print(val + " ");
+        }
         System.out.println("Max profit is: " + maxPro);
         rearrangeBySign1(re);
         for (int elem : re) {

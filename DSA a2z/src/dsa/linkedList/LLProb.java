@@ -99,7 +99,6 @@ public class LLProb extends LLwithRecursion {
             tail = temp2;
             temp2 = temp2.next;
         }
-
         while (temp1 != null && temp2 != null) {
             if (temp1.data <= temp2.data) {
                 tail.next = temp1;
@@ -111,13 +110,10 @@ public class LLProb extends LLwithRecursion {
                 temp2 = temp2.next;
             }
         }
-
         if (temp1 != null) {
             tail.next = temp1;
-
         } else {
             tail.next = temp2;
-
         }
         return head;
     }
