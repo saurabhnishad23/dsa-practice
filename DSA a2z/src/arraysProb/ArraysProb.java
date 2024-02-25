@@ -48,6 +48,28 @@ public class ArraysProb {
         }
     }
 
+    static int[] movesZeroes(int[] arr) {
+        int n = arr.length;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                list.add(arr[i]);
+            }
+        }
+
+        int nz = list.size();
+        // list in original array
+        for (int i = 0; i < nz; i++) {
+            arr[i] = list.get(i);
+        }
+
+        for (int i = nz; i < n; i++) {
+            arr[i] = 0;
+        }
+        return arr;
+
+    }
+
     static int[] rearrangeBySign1(int[] arr) {
         int n = arr.length;
         ArrayList<Integer> pos = new ArrayList<>();
@@ -109,11 +131,41 @@ public class ArraysProb {
         return ans;
     }
 
+    // rotate an array with index k
+
+    // static void swap(int start, int end) {
+    // int temp = start;
+    // start = end;
+    // end = temp;
+    // }
+
+    // static void reverseArr(int[] arr, int start, int end) {
+
+    // while (start < end) {
+    // swap(start, end);
+    // start++;
+    // end--;
+    // }
+    // }
+
+    // static void rotateArr(int[] arr, int d) {
+    // int n = arr.length;
+    // reverseArr(arr, 0, n - 1);
+    // reverseArr(arr, 0, d - 1);
+    // reverseArr(arr, d, n - 1);
+    // }
+
     public static void main(String[] args) {
         int arr[] = { 7, 1, 5, 3, 6, 4 };
+        // Arrays.sort(arr);
         int re[] = { 1, 2, -4, -5 };
         int[] arr5 = { 1, 0, 2, 3, 2, 0, 0, 4, 5, 1 };
-        pushZeroesToEnd(arr5);
+        // pushZeroesToEnd(arr5);
+        movesZeroes(arr5);
+        // rotateArr(arr5, 3);
+        for (int val : arr) {
+            System.out.print(val + " ");
+        }
         System.out.println("moved zeroes to end");
         int maxPro = maxProfit(arr);
         for (int val : arr5) {
