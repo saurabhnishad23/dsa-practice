@@ -67,6 +67,63 @@ public class StringsProb {
         // Append the first word to the output (without trailing space)
         return out + str[0];
     }
+    // masked prob or hide sensitive info
+
+    static String hideInfo(String s) {
+        int n = s.length();
+        StringBuilder hideNum = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            if (i < 4 || i >= n - 4) {
+                hideNum.append(s.charAt(i));
+            } else {
+                hideNum.append("*");
+            }
+        }
+        return hideNum.toString();
+    }
+
+    static String hideData(String s) {
+        int n = s.length();
+        StringBuilder hideNum = new StringBuilder();
+
+        for (int i = 0; i < n; i++) {
+            if (i < 4 || i >= n - 4) {
+                hideNum.append(s.charAt(i));
+            } else {
+                hideNum.append("*");
+            }
+        }
+        return hideNum.toString();
+    }
+
+    static int binaryToDecimal(int n) {
+
+        int binaryNum = 0;
+        int count = 0;
+
+        while (n != 0) {
+            int rem = n % 2;
+            Double c = Math.pow(10, count);
+            binaryNum += c * rem;
+            n /= 2;
+            count++;
+        }
+        return binaryNum;
+    }
+
+    static int binaryToDec(int n) {
+        int binaryNumber = 0;
+        int count = 0;
+
+        while (n != 0) {
+            int rem = n % 2;
+            Double c = Math.pow(10, count);
+            binaryNumber += rem * c;
+            n /= 2;
+            count++;
+        }
+        return binaryNumber;
+    }
 
     public static void main(String[] args) {
         String Str1 = "INTEGER";
@@ -76,5 +133,11 @@ public class StringsProb {
 
         String str = "the sky is blue";
         System.out.println(reverseWords(str));
+
+        String input = "123456781234";
+        String output = hideData(input);
+        System.out.println("Output: " + output);
+
+        System.out.println(binaryToDec(11));
     }
 }
