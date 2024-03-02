@@ -67,6 +67,18 @@ public class StringsProb {
         // Append the first word to the output (without trailing space)
         return out + str[0];
     }
+
+    static String revString(String str) {
+        int n = str.length();
+        String newStr = "";
+        // for (int i = n - 1; i >= 0; i--) {
+        // newStr = newStr + str.charAt(i);
+        // }
+        for (int i = 0; i < n; i++) {
+            newStr = newStr + str.charAt(n - i - 1);
+        }
+        return newStr;
+    }
     // masked prob or hide sensitive info
 
     static String hideInfo(String s) {
@@ -155,5 +167,10 @@ public class StringsProb {
         System.out.println(binaryToDec(11));
 
         System.out.println(isPallindrome("abbas"));
+
+        System.out.println(reverseWords("abcd e "));
+
+        System.out.println(revString("HelloWorld"));
+
     }
 }
