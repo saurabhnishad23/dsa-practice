@@ -21,11 +21,21 @@ public class RatMazeProb {
 
         // comfirmed the destination cell
         if (i == n - 1 && j == n - 1) {
+            for (int r = 0; r < n; r++) {
+                for (int c = 0; c < n; c++) {
+                    System.out.print(path[r][c] + " ");
+                }
+                System.out.println();
+            }
             return true;
         }
         // use recursion to move top bottom left right dirn
         // top
         if (solveMaze(maze, i - 1, j, path)) {
+            return true;
+        }
+        // right
+        if (solveMaze(maze, i, j + 1, path)) {
             return true;
         }
         // bottom
@@ -36,15 +46,11 @@ public class RatMazeProb {
         if (solveMaze(maze, i, j - 1, path)) {
             return true;
         }
-        // right
-        if (solveMaze(maze, i, j + 1, path)) {
-            return true;
-        }
         return false;
     }
 
     public static void main(String[] args) {
-        int maze[][] = { { 1, 1, 0 }, { 1, 0, 0 }, { 0, 1, 1 } };
+        int maze[][] = { { 1, 1, 0 }, { 1, 1, 0 }, { 0, 1, 1 } };
         boolean pathPossible = ratInMaze(maze);
         System.out.println(pathPossible);
     }
