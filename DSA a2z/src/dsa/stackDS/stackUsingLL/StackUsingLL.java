@@ -39,7 +39,7 @@ public class StackUsingLL<T> {
     }
 
     public T pop() throws StackEmpException {
-        if (head == null) {
+        if (size == 0) {
             throw new StackEmpException();
         }
         T temp = head.data;
@@ -50,14 +50,14 @@ public class StackUsingLL<T> {
     }
 
     public T top() throws StackEmpException {
-        if (head == null) {
+        if (size == 0) {
             throw new StackEmpException();
         }
         return head.data;
     }
 
     public T peek() throws StackEmpException {
-        if (head == null) {
+        if (size == 0) {
             throw new StackEmpException();
         }
         return head.data;

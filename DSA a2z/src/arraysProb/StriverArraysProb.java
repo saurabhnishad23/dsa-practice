@@ -219,16 +219,18 @@ public class StriverArraysProb {
 
     public static void main(String[] args) {
         // int[] arr = { 1, 2, 4, 7, 7, 5 };
-        // int arr1[] = { 1, 1, 2, 2, 2, 3, 3 };
-        // // int k = removeDupli(arr1);
-        // int k = remoDupli(arr1);
-        // // for (int val : k) {
+        // int arr1[] = { 1, 1, 2, 2, 2, 3, 4 };
+        // int k = removeDupli(arr1);
+        // int k1 = remoDupli(arr);
+        // for (int val : k) {
 
-        // // System.out.print(val + " ");
+        // System.out.print(val + " ");
         // // }
+        // System.out.println("removed dupli");
         // for (int i = 0; i < k; i++) {
         // System.out.print(arr1[i] + " ");
         // }
+        // System.out.println();
 
         // // System.out.println(secondLargest(arr));
         // int[] rot = { 1, 2, 3, 4, 5, 6, 7, 8 };

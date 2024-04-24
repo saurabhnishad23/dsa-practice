@@ -57,6 +57,7 @@ public class LinkedListUse {
 
     public static Node<Integer> takeInput() {
 
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         int data = s.nextInt();
         Node<Integer> head = null;
@@ -78,6 +79,7 @@ public class LinkedListUse {
     }
 
     static Node<Integer> takeInput1() {
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         int data = s.nextInt();
         Node<Integer> head = null;
@@ -100,6 +102,7 @@ public class LinkedListUse {
     // optimised take input method
 
     static Node<Integer> takeNodeInput() {
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         int data = s.nextInt();
         Node<Integer> head = null, tail = null;
@@ -118,6 +121,7 @@ public class LinkedListUse {
     }
 
     static Node<Integer> takeNodeInput1() {
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         int data = s.nextInt();
         Node<Integer> head = null, tail = null;

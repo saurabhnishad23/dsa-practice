@@ -42,6 +42,28 @@ public class Frequency {
         }
     }
 
+    static void countCharFreq(String str) {
+        int n = str.length();
+        char[] c = str.toCharArray();
+        boolean[] visited = new boolean[n];
+
+        for (int i = 0; i < n; i++) {
+
+            if (visited[i] == true) {
+                continue;
+            }
+            int count = 1;
+            for (int j = i + 1; j < n; j++) {
+                if (c[i] == c[j]) {
+                    visited[j] = true;
+                    count++;
+                }
+            }
+            System.out.println(c[i] + "|" + count);
+
+        }
+    }
+
     static void countFrequency(int[] arr) {
         int n = arr.length;
         boolean[] visited = new boolean[n];
@@ -66,5 +88,8 @@ public class Frequency {
         // countFreq(arr);
         // countFreq(arr, 11);
         countFrequency(arr);
+
+        String str = "Hello how are you.";
+        countCharFreq(str);
     }
 }
