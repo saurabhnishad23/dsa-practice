@@ -137,6 +137,9 @@ public class YtStringsProb {
         revWords(str);
         String revStr = revWord(str);
         System.out.println();
+        System.out.println("revWord");
         System.out.println(revStr);
+        String check = "abc";
+        System.out.println(findUniqueChar(check));
     }
 }
