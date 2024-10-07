@@ -255,7 +255,7 @@ public class StriverArraysProb {
         int ans = conseOnes(nums);
         System.out.println("The maximum  consecutive 1's are " + ans);
 
-        int[] a = { 100, 200, 99, 101, 4, 1, 2, 3, };
+        int[] a = { 100, 200, 99, 101, 102, 103, 4, 2, 3, };
         int ans1 = maxConsecutive(a);
         System.out.println("The longest consecutive sequence is " + ans1);
     }

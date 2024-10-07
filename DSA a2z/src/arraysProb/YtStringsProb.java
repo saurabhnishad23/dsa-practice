@@ -1,8 +1,11 @@
 package arraysProb;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
+import java.util.Map.Entry;
 
 public class YtStringsProb {
     // Print First char of a sentence
@@ -86,6 +89,27 @@ public class YtStringsProb {
         }
     }
 
+    static void firstNonRepeated(String str) {
+        int n = str.length();
+
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            if (map.containsKey(str.charAt(i))) {
+                map.put(str.charAt(i), map.get(str.charAt(i)) + 1);
+            } else {
+                map.put(str.charAt(i), 1);
+            }
+        }
+        System.out.println(map);
+        for (Entry<Character, Integer> entrySet : map.entrySet()) {
+            if (entrySet.getValue() == 1) {
+                System.out.println(entrySet.getKey());
+                break;
+            }
+        }
+    }
+
     // Reverse entire sentences word from end
     static String revWord(String str) {
         int n = str.length();
@@ -125,8 +149,43 @@ public class YtStringsProb {
         return set.size();
     }
 
+    static void findOccurence(String str) {
+        // int n = str.length();
+        char[] c = str.toCharArray();
+
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (char ch : c) {
+            if (map.containsKey(ch)) {
+                map.put(ch, map.get(ch) + 1);
+            } else {
+                map.put(ch, 1);
+            }
+        }
+        System.out.println(map);
+
+    }
+
+    static String revEachWord(String str) {
+
+        String[] words = str.split(" ");
+        String output = "";
+        for (String word : words) {
+            String revWord = "";
+            for (int i = word.length() - 1; i >= 0; i--) {
+                revWord += word.charAt(i);
+            }
+            output = output + revWord + " ";
+        }
+        return output;
+    }
+
     public static void main(String[] args) {
         String str = "Hello You are great.";
+        String str6 = "You'll get ur success, don't worry.";
+
+        System.out.println(revEachWord(str6));
+        revWords(str6);
         printFirstChar(str);
         printFirstChar1(str);
         // String abc = reveString(str);
@@ -141,5 +200,8 @@ public class YtStringsProb {
         System.out.println(revStr);
         String check = "abc";
         System.out.println(findUniqueChar(check));
+        String random = "aabcdedfr";
+        findOccurence(random);
+        firstNonRepeated(random);
     }
 }
