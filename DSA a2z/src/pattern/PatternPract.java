@@ -68,7 +68,7 @@ public class PatternPract {
         }
     }
 
-    static void sandGlass(int n) {
+    static void sandClock(int n) {
         for (int i = 1; i < n; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print(" ");
@@ -105,6 +105,82 @@ public class PatternPract {
         }
     }
 
+    static void invertPyra(int n) {
+
+        for (int i = n; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+    }
+
+    static void rowCount(int n) {
+
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+    }
+
+    static void increaseCount(int n) {
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + j - 1);
+            }
+            System.out.println();
+        }
+    }
+
+    static void linearCount(int n) {
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
+    static void floydsTriangle(int n) {
+        int p = 1;
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(p);
+                p++;
+            }
+            System.out.println();
+        }
+    }
+
+    static void printAlphabet(int n) {
+        char p = 'A';
+
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < i; j++) {
+                System.out.print(p + ",");
+                p = (char) (p + 1);
+            }
+            System.out.println();
+        }
+    }
+
+    static void linearChar(int n) {
+        for (int i = 1; i < n; i++) {
+            char p = (char) ('A' + i - 1);
+            for (int j = 1; j <= i; j++) {
+                System.out.print(p);
+                // p++;
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Check");
         triangle(6);
@@ -113,8 +189,14 @@ public class PatternPract {
         diamondTriangle(5);
         invertTri(6);
         System.out.println("----------------");
-        sandGlass(6);
+        sandClock(6);
         hollowTriangle(6);
-
+        invertPyra(5);
+        rowCount(5);
+        increaseCount(5);
+        linearCount(6);
+        floydsTriangle(5);
+        printAlphabet(9);
+        linearChar(6);
     }
 }
