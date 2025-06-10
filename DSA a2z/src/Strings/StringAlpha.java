@@ -9,12 +9,12 @@ public class StringAlpha {
         int y = 0;
 
         for (int i = 0; i < n; i++) {
-            char div = s.charAt(i);
+            char dir = s.charAt(i);
             if (div == 'E') {
                 x++;
-            } else if (div == 'W') {
+            } else if (dir == 'W') {
                 x--;
-            } else if (div == 'N') {
+            } else if (dir == 'N') {
                 y++;
             } else {
                 y--;
