@@ -2,6 +2,7 @@ package arraysProb;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class ArraysProb {
@@ -16,6 +17,20 @@ public class ArraysProb {
             maxPro = Math.max(maxPro, arr[i] - minPrice);
         }
         return maxPro;
+    }
+
+    static int[] twoSum(int[] arr, int target) {
+        int n = arr.length;
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            int reqNum = target - arr[i];
+            if (map.containsKey(reqNum)) {
+                return new int[] { map.get(reqNum), i };
+            }
+            map.put(arr[i], i);
+        }
+        return new int[] {};
     }
 
     static int[] rearrangeBySign(int[] arr) { // pending

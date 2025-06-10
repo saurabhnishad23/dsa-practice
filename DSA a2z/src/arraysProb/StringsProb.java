@@ -168,6 +168,28 @@ public class StringsProb {
         return true;
     }
 
+    static void compressWord(String str) {
+        int n = str.length() - 1;
+        String newStr = "";
+
+        for (int i = 0; i < n; i++) {
+            Integer count = 1;
+            // newStr += str.charAt(i);
+            while (i < n && str.charAt(i) == str.charAt(i + 1)) {
+
+                count++;
+                i++;
+            }
+            newStr += str.charAt(i);
+            if (count > 1) {
+                newStr += count.toString();
+            }
+
+        }
+        System.out.println(newStr);
+
+    }
+
     public static void main(String[] args) {
         String Str1 = "INTEGER";
         System.out.println(sortSt(Str1));
@@ -189,6 +211,8 @@ public class StringsProb {
         System.out.println(reverseWords("abcd e "));
 
         System.out.println(revString("HelloWorld"));
+        String s = "aavvvrrrbbb";
+        compressWord(s);
 
     }
 }
